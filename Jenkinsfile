@@ -13,7 +13,7 @@ pipeline{
       }
     }
 
-    stage(deploy){
+    stage("deploy"){
       stpes{
         echo 'deploying the application...'
       }
