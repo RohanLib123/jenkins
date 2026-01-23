@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('CheckouT') {
+        stage('Checkoutt') {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/ORG/REPO.git',
