@@ -1,12 +1,23 @@
 pipeline {
-    agent any
-    stages {
-        stage('Checko') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/ORG/REPO.git',
-                    credentialsId: 'my-pipline-rohan-github'
-            }
-        }
+  agent any
+
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
     }
+
+    stage('Build') {
+      steps {
+        echo "Building branch: ${env.BRANCH_NAME}"
+      }
+    }
+
+    stage('Test') {
+      steps {
+        echo "Running tests..."
+      }
+    }
+  }
 }
